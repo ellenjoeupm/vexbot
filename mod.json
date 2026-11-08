@@ -1,17 +1,67 @@
 {
   "geode": "5.7.1",
   "gd": { "win": "2.2081", "android": "2.2081", "mac": "2.2081", "ios": "2.2081" },
-  "id": "tuusuario.vexbot",
+  "id": "__vexro__.vexbot",
   "name": "VexBot",
-  "version": "v1.0.0",
+  "version": "v1.1.0",
   "developer": "TuNombre",
-  "description": "Bot showcase. F2 para activar/desactivar.",
+  "description": "Bot showcase. F2 para activar/desactivar. ESC para abrir ajustes.",
   "settings": {
     "safe-mode": {
       "type": "bool",
       "name": "Safe Mode",
-      "description": "Si está activo, los niveles pasados con el bot no se guardan.",
+      "description": "Si está activo, los niveles pasados con el bot (o con velocidad/FPS modificados) no se guardan.",
       "default": true
+    },
+    "bot-name": {
+      "type": "string",
+      "name": "Nombre del bot",
+      "description": "Texto de la marca que aparece al completar el nivel.",
+      "default": "VexBot"
+    },
+    "lookahead": {
+      "type": "float",
+      "name": "Distancia de reacción",
+      "description": "A qué distancia de un peligro salta el bot.",
+      "default": 45.0,
+      "min": 10.0,
+      "max": 150.0
+    },
+    "y-tolerance": {
+      "type": "float",
+      "name": "Tolerancia vertical",
+      "description": "Qué tan alineado en altura tiene que estar el peligro.",
+      "default": 30.0,
+      "min": 5.0,
+      "max": 100.0
+    },
+    "hold-ticks": {
+      "type": "int",
+      "name": "Duración del click",
+      "description": "Cantidad de ticks que mantiene apretado cada click.",
+      "default": 4,
+      "min": 1,
+      "max": 30
+    },
+    "speed": {
+      "type": "float",
+      "name": "Velocidad del juego",
+      "description": "1.0 es normal. Afecta la física.",
+      "default": 1.0,
+      "min": 0.1,
+      "max": 3.0
+    },
+    "override-fps": {
+      "type": "bool",
+      "name": "Usar FPS personalizados",
+      "default": false
+    },
+    "fps": {
+      "type": "int",
+      "name": "FPS",
+      "default": 60,
+      "min": 15,
+      "max": 360
     }
   }
 }
