@@ -10,7 +10,7 @@ static bool g_botUsed = false;
 static bool g_holding = false;
 
 class $modify(VexKeys, CCKeyboardDispatcher) {
-    bool dispatchKeyboardMSG(enumKeyCodes key, bool down, bool repeat) {
+    bool dispatchKeyboardMSG(enumKeyCodes key, bool down, bool repeat, double timestamp) {
         if (down && !repeat && key == KEY_F2) {
             g_botOn = !g_botOn;
             Notification::create(
@@ -18,7 +18,7 @@ class $modify(VexKeys, CCKeyboardDispatcher) {
                 NotificationIcon::Info
             )->show();
         }
-        return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat);
+        return CCKeyboardDispatcher::dispatchKeyboardMSG(key, down, repeat, timestamp);
     }
 };
 
@@ -39,7 +39,7 @@ class $modify(VexGameLayer, GJBaseGameLayer) {
         return false;
     }
 
-    void processCommands(float dt) {
+    void processCommands(float dt, bool isHalfTick, bool isLastTick) {
         if (g_botOn && PlayLayer::get()) {
             bool want = shouldJump();
             if (want != g_holding) {
@@ -48,7 +48,7 @@ class $modify(VexGameLayer, GJBaseGameLayer) {
                 this->handleButton(want, 1, true);
             }
         }
-        GJBaseGameLayer::processCommands(dt);
+        GJBaseGameLayer::processCommands(dt, isHalfTick, isLastTick);
     }
 };
 
