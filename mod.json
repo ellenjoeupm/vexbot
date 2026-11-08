@@ -1,0 +1,17 @@
+{
+  "geode": "5.0.0",
+  "gd": { "win": "2.2081", "android": "2.2081", "mac": "2.2081", "ios": "2.2081" },
+  "id": "tuusuario.vexbot",
+  "name": "VexBot",
+  "version": "v1.0.0",
+  "developer": "TuNombre",
+  "description": "Bot showcase. F2 para activar/desactivar.",
+  "settings": {
+    "safe-mode": {
+      "type": "bool",
+      "name": "Safe Mode",
+      "description": "Si está activo, los niveles pasados con el bot no se guardan.",
+      "default": true
+    }
+  }
+}

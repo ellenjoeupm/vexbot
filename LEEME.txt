@@ -1,0 +1,8 @@
+VexBot - proyecto Geode (GD 2.2081)
+
+OPCION A (sin instalar nada): subí esta carpeta a un repo de GitHub.
+Se compila solo con Actions y te baja el .geode en "Artifacts".
+
+OPCION B (local): instalá Geode CLI + SDK, y en esta carpeta corré:
+  geode build
+El .geode queda en build/. Copialo a la carpeta geode/mods de GD.
